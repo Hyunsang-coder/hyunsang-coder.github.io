@@ -4,501 +4,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Designer & Developer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fff;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* 헤더 */
-        header {
-            padding: 20px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #007bff;
-        }
-
-        /* 히어로 섹션 */
-        .hero {
-            padding: 150px 0 100px;
-            text-align: center;
-        }
-
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 0 auto 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            color: white;
-            font-weight: bold;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 300;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .hero h2 {
-            font-size: 36px;
-            font-weight: 600;
-            color: #007bff;
-            margin-bottom: 30px;
-        }
-
-        .hero p {
-            font-size: 20px;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* 프로세스 섹션 */
-        .process {
-            padding: 100px 0;
-            background: #f8f9fa;
-        }
-
-        .process h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 80px;
-            color: #333;
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px;
-        }
-
-        .step {
-            text-align: center;
-            padding: 30px;
-        }
-
-        .step-number {
-            font-size: 48px;
-            font-weight: bold;
-            color: #007bff;
-            margin-bottom: 20px;
-        }
-
-        .step h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .step p {
-            color: #666;
-            font-size: 16px;
-        }
-
-        /* 프로젝트 섹션 */
-        .projects {
-            padding: 100px 0;
-        }
-
-        .projects h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 80px;
-            color: #333;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-image {
-            height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .project-content {
-            padding: 30px;
-        }
-
-        .project-content h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .project-content p {
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .project-link {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        /* 후기 섹션 */
-        .testimonials {
-            padding: 100px 0;
-            background: #f8f9fa;
-        }
-
-        .testimonials h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 80px;
-            color: #333;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .testimonial {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: #666;
-            font-size: 16px;
-        }
-
-        .testimonial-author {
-            font-weight: bold;
-            color: #333;
-        }
-
-        .testimonial-role {
-            color: #666;
-            font-size: 14px;
-        }
-
-        /* 가격 섹션 */
-        .pricing {
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .pricing h2 {
-            font-size: 36px;
-            margin-bottom: 50px;
-            color: #333;
-        }
-
-        .pricing-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .pricing p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #007bff;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 500;
-            transition: background 0.3s;
-        }
-
-        .cta-button:hover {
-            background: #0056b3;
-        }
-
-        /* 푸터 */
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 50px 0;
-        }
-
-        .footer-content h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .footer-content p {
-            margin-bottom: 10px;
-            color: #ccc;
-        }
-
-        .footer-links {
-            margin-top: 30px;
-        }
-
-        .footer-links a {
-            color: #ccc;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        /* 반응형 */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero h2 {
-                font-size: 28px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            .process-steps {
-                grid-template-columns: 1fr;
-            }
-
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>Hyunsang Joo - Translator & Vibe Coder</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">Hyunsang Joo</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About Me</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="page-container">
+        <!-- 좌측 고정 영역 -->
+        <div class="left-panel">
+            <div class="intro-section">
+                <h1>Hyunsang Joo</h1>
+                <h2>Translator & Vibe Coder</h2>
+                <p>I craft seamless digital experiences while bridging language barriers in the gaming industry.</p>
 
-    <main>
-        <!-- 히어로 섹션 -->
-        <section class="hero container" id="home">
-            <div class="profile-img">YN</div>
-            <h1>Hello, I'm Hyunsang Joo!</h1>
-            <h2>I design and develop websites.</h2>
-            <p>I also design your brand image, logo and create digital experiences that are both elegant and functional.
-            </p>
-        </section>
-
-        <!-- 프로세스 섹션 -->
-        <section class="process" id="about">
-            <div class="container">
-                <h2>About Me</h2>
-                <div class="process-steps">
-                    <div class="step">
-                        <div class="step-number">01</div>
-                        <h3>First, we need an idea...</h3>
-                        <p>Understanding your vision and requirements is the foundation of every successful project.</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">02</div>
-                        <h3>Then an analysis and direction...</h3>
-                        <p>Research and strategic planning to ensure we're heading in the right direction.</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">03</div>
-                        <h3>Creativity takes place for the design.</h3>
-                        <p>Bringing ideas to life through thoughtful design and user experience.</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">04</div>
-                        <h3>Finally, I code and publish!</h3>
-                        <p>Converting designs into fully functional websites with clean, efficient code.</p>
-                    </div>
-                </div>
+                <nav class="main-nav">
+                    <a href="#about" class="nav-link active" data-section="about">
+                        <span class="nav-indicator"></span>
+                        <span class="nav-text">About</span>
+                    </a>
+                    <a href="#experience" class="nav-link" data-section="experience">
+                        <span class="nav-indicator"></span>
+                        <span class="nav-text">Experience</span>
+                    </a>
+                    <a href="#projects" class="nav-link" data-section="projects">
+                        <span class="nav-indicator"></span>
+                        <span class="nav-text">Projects</span>
+                    </a>
+                </nav>
             </div>
-        </section>
 
-        <!-- 프로젝트 섹션 -->
-        <section class="projects container" id="projects">
-            <h2>My Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-image">E-commerce Platform</div>
-                    <div class="project-content">
-                        <h3>Modern E-commerce</h3>
-                        <p>A fully responsive e-commerce platform with modern design and seamless user experience.</p>
-                        <a href="#" class="project-link">View Project →</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">Corporate Website</div>
-                    <div class="project-content">
-                        <h3>Corporate Identity</h3>
-                        <p>Professional corporate website with brand identity design and content management system.</p>
-                        <a href="#" class="project-link">View Project →</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">Portfolio Site</div>
-                    <div class="project-content">
-                        <h3>Creative Portfolio</h3>
-                        <p>Artist portfolio website showcasing creative works with interactive galleries.</p>
-                        <a href="#" class="project-link">View Project →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 후기 섹션 -->
-        <section class="testimonials">
-            <div class="container">
-                <h2>They Trusted Me</h2>
-                <div class="testimonial-grid">
-                    <div class="testimonial">
-                        <div class="testimonial-text">
-                            "I gave free rein to create my entire platform. Very professional and above all very
-                            responsive. I am really more than satisfied with the result."
-                        </div>
-                        <div class="testimonial-author">John Smith</div>
-                        <div class="testimonial-role">CEO, TechCorp</div>
-                    </div>
-                    <div class="testimonial">
-                        <div class="testimonial-text">
-                            "Always attentive to ideas, perfectly creates a beautiful visual identity. I highly
-                            recommend the services for creating websites and brand design."
-                        </div>
-                        <div class="testimonial-author">Sarah Johnson</div>
-                        <div class="testimonial-role">Creative Director, Studio</div>
-                    </div>
-                    <div class="testimonial">
-                        <div class="testimonial-text">
-                            "Delivered a result on time, the result was top-notch. The work brought a fresh look to my
-                            website's design. I recommend."
-                        </div>
-                        <div class="testimonial-author">Mike Wilson</div>
-                        <div class="testimonial-role">Founder, StartupCo</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 가격 섹션 -->
-        <section class="pricing container" id="pricing">
-            <h2>How much does it cost?</h2>
-            <div class="pricing-content">
-                <p>Tell me about your project, the cost will depend on the time needed. For example, you should expect
-                    between $2,500 and $3,500 for a showcase site.</p>
-                <p>For larger projects, the rate will be based on the time required. I will then send you a quote.</p>
-                <a href="#contact" class="cta-button">Get a Quote</a>
-            </div>
-        </section>
-    </main>
-
-    <!-- 푸터 -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <h3>Your Name</h3>
-                <p>Seoul, South Korea</p>
-                <p>I design and develop websites that are both elegant, intuitive, and accessible.</p>
-                <p>Driven by a deep passion for graphic design and web development.</p>
-                <div class="footer-links">
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Email</a>
-                    <a href="#">Portfolio</a>
-                </div>
+            <div class="social-links">
+                <a href="#" aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="Email">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z" />
+                    </svg>
+                </a>
             </div>
         </div>
-    </footer>
+
+        <!-- 우측 메인 컨텐츠 -->
+        <div class="right-panel">
+            <main class="main-content">
+                <!-- About Section -->
+                <section id="about" class="content-section">
+                    <div class="section-header">
+                        <h2 class="section-title">About</h2>
+                    </div>
+                    <div class="section-content">
+                        <p>I'm a translator and developer passionate about creating intuitive digital experiences while
+                            bridging language barriers in the gaming industry. My work lies at the intersection of
+                            linguistics and technology, crafting applications that not only function flawlessly but also
+                            communicate effectively across cultures.</p>
+
+                        <p>Currently, I'm a Translator at <a href="#" class="link">PUBG Studios</a>, where I localize
+                            game content and collaborate with international teams to ensure authentic gaming experiences
+                            for global audiences. I specialize in Korean-English translation while maintaining the
+                            cultural nuances that make games truly immersive.</p>
+
+                        <p>In my spare time, I develop mobile and desktop applications using <span
+                                class="highlight">Unity</span>, <span class="highlight">Python</span>, and <span
+                                class="highlight">Flutter</span>. I enjoy exploring the latest technologies and building
+                            tools that solve real-world problems.</p>
+
+                        <p>When I'm not coding or translating, you can find me playing the latest indie games, learning
+                            new programming languages, or exploring Seoul's vibrant tech scene.</p>
+                    </div>
+                </section>
+
+                <!-- Experience Section -->
+                <section id="experience" class="content-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Experience</h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div class="experience-period">2022 — Present</div>
+                                <div class="experience-company">PUBG Studios</div>
+                            </div>
+                            <div class="experience-details">
+                                <h3 class="experience-title">Translator & Localization Specialist</h3>
+                                <p class="experience-description">Translate and localize game content from Korean to
+                                    English and vice versa. Collaborate with development teams to ensure cultural
+                                    authenticity and maintain consistent terminology across all game assets. Work
+                                    closely with international QA teams to identify and resolve localization issues.</p>
+                                <div class="experience-skills">
+                                    <span class="skill-tag">Korean-English Translation</span>
+                                    <span class="skill-tag">Game Localization</span>
+                                    <span class="skill-tag">Cultural Adaptation</span>
+                                    <span class="skill-tag">QA Collaboration</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div class="experience-period">2020 — 2022</div>
+                                <div class="experience-company">Freelance</div>
+                            </div>
+                            <div class="experience-details">
+                                <h3 class="experience-title">Full-Stack Developer & Translator</h3>
+                                <p class="experience-description">Developed mobile applications and web services for
+                                    various clients while providing translation services for tech startups. Created
+                                    cross-platform solutions using modern frameworks and helped international companies
+                                    establish their presence in the Korean market.</p>
+                                <div class="experience-skills">
+                                    <span class="skill-tag">Flutter</span>
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">Unity</span>
+                                    <span class="skill-tag">React</span>
+                                    <span class="skill-tag">Firebase</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div class="experience-period">2018 — 2020</div>
+                                <div class="experience-company">TechTranslate Co.</div>
+                            </div>
+                            <div class="experience-details">
+                                <h3 class="experience-title">Technical Translator</h3>
+                                <p class="experience-description">Specialized in translating technical documentation,
+                                    software interfaces, and API documentation for various tech companies. Maintained
+                                    translation memory databases and developed internal tools to improve translation
+                                    efficiency.</p>
+                                <div class="experience-skills">
+                                    <span class="skill-tag">Technical Writing</span>
+                                    <span class="skill-tag">API Documentation</span>
+                                    <span class="skill-tag">CAT Tools</span>
+                                    <span class="skill-tag">Automation Scripts</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projects Section -->
+                <section id="projects" class="content-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Projects</h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="project-item">
+                            <div class="project-header">
+                                <h3 class="project-title">
+                                    <a href="#" class="project-link">GameTranslate Pro</a>
+                                </h3>
+                            </div>
+                            <p class="project-description">A Unity plugin that automates the translation workflow for
+                                game developers. Features include real-time translation API integration, context-aware
+                                suggestions, and collaborative review tools for translation teams.</p>
+                            <div class="project-skills">
+                                <span class="skill-tag">Unity</span>
+                                <span class="skill-tag">C#</span>
+                                <span class="skill-tag">Google Translate API</span>
+                                <span class="skill-tag">SQLite</span>
+                            </div>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="project-header">
+                                <h3 class="project-title">
+                                    <a href="#" class="project-link">KoreanMate Mobile</a>
+                                </h3>
+                            </div>
+                            <p class="project-description">Cross-platform mobile app for Korean language learners
+                                featuring interactive lessons, pronunciation practice, and cultural context
+                                explanations. Built with Flutter and integrated with speech recognition APIs.</p>
+                            <div class="project-skills">
+                                <span class="skill-tag">Flutter</span>
+                                <span class="skill-tag">Dart</span>
+                                <span class="skill-tag">Firebase</span>
+                                <span class="skill-tag">Speech-to-Text API</span>
+                            </div>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="project-header">
+                                <h3 class="project-title">
+                                    <a href="#" class="project-link">Translation Memory Tool</a>
+                                </h3>
+                            </div>
+                            <p class="project-description">Python-based desktop application that helps translators
+                                manage large translation projects. Features include fuzzy matching, terminology
+                                management, and integration with popular CAT tools.</p>
+                            <div class="project-skills">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">PyQt6</span>
+                                <span class="skill-tag">PostgreSQL</span>
+                                <span class="skill-tag">NLP Libraries</span>
+                            </div>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="project-header">
+                                <h3 class="project-title">
+                                    <a href="#" class="project-link">PUBG Stats Dashboard</a>
+                                </h3>
+                            </div>
+                            <p class="project-description">Personal project analyzing PUBG gameplay statistics with
+                                interactive visualizations. Built to explore game balance and player behavior patterns
+                                using the official PUBG API.</p>
+                            <div class="project-skills">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Pandas</span>
+                                <span class="skill-tag">Plotly</span>
+                                <span class="skill-tag">PUBG API</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="footer">
+                    <p>Built with HTML & CSS. Inspired by <a href="https://brittanychiang.com/" class="link">Brittany
+                            Chiang</a>.</p>
+                </footer>
+            </main>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -1,8 +1,504 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head><meta charset="UTF-8"><title>Welcome to My GitHub Pages</title></head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Designer & Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 헤더 */
+        header {
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #007bff;
+        }
+
+        /* 히어로 섹션 */
+        .hero {
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            font-weight: 600;
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 프로세스 섹션 */
+        .process {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .process h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 80px;
+            color: #333;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .step-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .step h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .step p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* 프로젝트 섹션 */
+        .projects {
+            padding: 100px 0;
+        }
+
+        .projects h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 80px;
+            color: #333;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-content h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .project-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* 후기 섹션 */
+        .testimonials {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 80px;
+            color: #333;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .testimonial-role {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* 가격 섹션 */
+        .pricing {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .pricing h2 {
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .pricing-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pricing p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #0056b3;
+        }
+
+        /* 푸터 */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .footer-content h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .footer-content p {
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        .footer-links {
+            margin-top: 30px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
 <body>
-  <h1>안녕하세요!</h1>
-  <p>여기는 hyunsang-coder의 유저 페이지입니다.</p>
+    <header>
+        <nav class="container">
+            <div class="logo">Hyunsang Joo</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 히어로 섹션 -->
+        <section class="hero container" id="home">
+            <div class="profile-img">YN</div>
+            <h1>Hello, I'm Hyunsang Joo!</h1>
+            <h2>I design and develop websites.</h2>
+            <p>I also design your brand image, logo and create digital experiences that are both elegant and functional.
+            </p>
+        </section>
+
+        <!-- 프로세스 섹션 -->
+        <section class="process" id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">01</div>
+                        <h3>First, we need an idea...</h3>
+                        <p>Understanding your vision and requirements is the foundation of every successful project.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">02</div>
+                        <h3>Then an analysis and direction...</h3>
+                        <p>Research and strategic planning to ensure we're heading in the right direction.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">03</div>
+                        <h3>Creativity takes place for the design.</h3>
+                        <p>Bringing ideas to life through thoughtful design and user experience.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">04</div>
+                        <h3>Finally, I code and publish!</h3>
+                        <p>Converting designs into fully functional websites with clean, efficient code.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 프로젝트 섹션 -->
+        <section class="projects container" id="projects">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-image">E-commerce Platform</div>
+                    <div class="project-content">
+                        <h3>Modern E-commerce</h3>
+                        <p>A fully responsive e-commerce platform with modern design and seamless user experience.</p>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">Corporate Website</div>
+                    <div class="project-content">
+                        <h3>Corporate Identity</h3>
+                        <p>Professional corporate website with brand identity design and content management system.</p>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">Portfolio Site</div>
+                    <div class="project-content">
+                        <h3>Creative Portfolio</h3>
+                        <p>Artist portfolio website showcasing creative works with interactive galleries.</p>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 후기 섹션 -->
+        <section class="testimonials">
+            <div class="container">
+                <h2>They Trusted Me</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial">
+                        <div class="testimonial-text">
+                            "I gave free rein to create my entire platform. Very professional and above all very
+                            responsive. I am really more than satisfied with the result."
+                        </div>
+                        <div class="testimonial-author">John Smith</div>
+                        <div class="testimonial-role">CEO, TechCorp</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-text">
+                            "Always attentive to ideas, perfectly creates a beautiful visual identity. I highly
+                            recommend the services for creating websites and brand design."
+                        </div>
+                        <div class="testimonial-author">Sarah Johnson</div>
+                        <div class="testimonial-role">Creative Director, Studio</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-text">
+                            "Delivered a result on time, the result was top-notch. The work brought a fresh look to my
+                            website's design. I recommend."
+                        </div>
+                        <div class="testimonial-author">Mike Wilson</div>
+                        <div class="testimonial-role">Founder, StartupCo</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 가격 섹션 -->
+        <section class="pricing container" id="pricing">
+            <h2>How much does it cost?</h2>
+            <div class="pricing-content">
+                <p>Tell me about your project, the cost will depend on the time needed. For example, you should expect
+                    between $2,500 and $3,500 for a showcase site.</p>
+                <p>For larger projects, the rate will be based on the time required. I will then send you a quote.</p>
+                <a href="#contact" class="cta-button">Get a Quote</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <h3>Your Name</h3>
+                <p>Seoul, South Korea</p>
+                <p>I design and develop websites that are both elegant, intuitive, and accessible.</p>
+                <p>Driven by a deep passion for graphic design and web development.</p>
+                <div class="footer-links">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Email</a>
+                    <a href="#">Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>

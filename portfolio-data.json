@@ -1,0 +1,30 @@
+{
+  "experiences": [
+    {
+      "id": "pubg-studios",
+      "period": "2019.05 ~",
+      "company": "PUBG Studios",
+      "title": "Translator",
+      "description": "..",
+      "skills": ["English"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "readkatoo",
+      "title": "ReadKatoo",
+      "description": "Free from distractions.",
+      "link": "#",
+      "image": null,
+      "skills": ["html", "css"]
+    },
+    {
+      "id": "random-runner",
+      "title": "Random Runner",
+      "description": "사다리타기",
+      "link": "#",
+      "image": null,
+      "skills": ["C#"]
+    }
+  ]
+}

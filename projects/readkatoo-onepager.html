@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReadKatoo - One Pager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font - family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #e2e8f0;
+            background-color: #0f172a;
+        }
+
+        .container {
+            max - width: 800px;
+            margin: 0 auto;
+            padding: 100px 50px;
+        }
+
+        .template-header {
+            text - align: center;
+            margin-bottom: 80px;
+        }
+
+        .template-header h1 {
+            font - size: 48px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 24px;
+        }
+
+        .template-header .tagline {
+            font - size: 20px;
+            font-weight: 500;
+            color: #64748b;
+        }
+
+        .template-section {
+            margin - bottom: 80px;
+        }
+
+        .template-section h2 {
+            font - size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #f1f5f9;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #334155;
+        }
+
+        .template-section p {
+            color: #94a3b8;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .feature-item {
+            padding: 20px;
+            border-radius: 8px;
+            background-color: rgba(30, 41, 59, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background - color: rgba(30, 41, 59, 0.8);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-item h3 {
+            font - size: 16px;
+            font-weight: 600;
+            color: #f1f5f9;
+            margin-bottom: 8px;
+        }
+
+        .feature-item p {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 24px;
+            background-color: rgba(30, 41, 59, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .pricing-table th,
+        .pricing-table td {
+            padding: 16px;
+            text-align: center;
+            border-bottom: 1px solid #334155;
+        }
+
+        .pricing-table th {
+            background - color: rgba(30, 41, 59, 0.8);
+            color: #f1f5f9;
+            font-weight: 600;
+        }
+
+        .pricing-table td {
+            color: #94a3b8;
+        }
+
+        .cta-section {
+            text - align: center;
+            padding: 40px;
+            border-radius: 8px;
+            background-color: rgba(30, 41, 59, 0.5);
+            margin: 60px 0;
+        }
+
+        .cta-section h2 {
+            font - size: 24px;
+            font-weight: 600;
+            color: #f1f5f9;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 32px;
+            background-color: #22d3ee;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background - color: #67e8f9;
+            transform: translateY(-2px);
+        }
+
+        .contact-list {
+            list - style: none;
+            margin-top: 24px;
+        }
+
+        .contact-list li {
+            margin - bottom: 12px;
+            color: #94a3b8;
+        }
+
+        .contact-list a {
+            color: #22d3ee;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-list a:hover {
+            color: #67e8f9;
+        }
+
+        .highlight {
+            color: #22d3ee;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 50px 20px;
+            }
+
+            .template-header h1 {
+                font - size: 36px;
+            }
+
+            .features-grid {
+                grid - template - columns: 1fr;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="template-header">
+            <h1>ReadKatoo</h1>
+            <p class="tagline">Customizable Reading Mode</p>
+        </header>
+
+        <section class="template-section">
+            <h2>Problem</h2>
+            <p>Distracting ads</p>
+        </section>
+
+        <section class="template-section">
+            <h2>Solution</h2>
+            <p>Reading mode without ads or any distractions.</p>
+        </section>
+
+        <section class="template-section">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+
+                <div class="feature-item">
+                    <h3>Customization</h3>
+                    <p>Customize font and background</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="template-section">
+            <h2>Pricing</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Plan</th>
+                        <th>Price</th>
+                        <th>Features</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Free</td>
+                        <td>$0</td>
+                        <td>Basic cropping</td>
+                    </tr>
+                    <tr>
+                        <td>Pro</td>
+                        <td><span class="highlight">None</span></td>
+                        <td>None</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="cta-section">
+            <h2>Get Started</h2>
+            <a href="#" class="cta-button">Install Now</a>
+        </section>
+
+        <footer class="template-section">
+            <h2>Contact</h2>
+            <ul class="contact-list">
+                <li>Email: <a href="mailto:joo.hyunsang@gmail.com">joo.hyunsang@gmail.com</a></li>
+                <li>Website: <a href="#">https://hyunsang-coder.github.io/#projects</a></li>
+                <li>Twitter: <a href="#"></a></li>
+            </ul>
+        </footer>
+    </div>
+</body>
+
+</html>

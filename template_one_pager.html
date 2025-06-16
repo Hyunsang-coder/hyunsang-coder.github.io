@@ -5,101 +5,237 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crop Extension One-Pager</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            padding: 20px;
-        }
-
-        header,
-        section,
-        footer {
-            margin-bottom: 40px;
-        }
-
-        h1,
-        h2 {
-            color: #222;
-            margin-bottom: 10px;
-        }
-
-        p {
-            margin-bottom: 10px;
-        }
-
+        /* Additional styles for one-pager template */
         .container {
             max-width: 800px;
             margin: 0 auto;
+            padding: 100px 50px;
         }
 
-        .features,
-        .benefits,
-        .how-it-works {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .feature,
-        .benefit,
-        .step {
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 8px;
-        }
-
-        .cta {
+        .template-header {
             text-align: center;
+            margin-bottom: 80px;
         }
 
-        .cta a {
+        .template-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+
+        .template-header .tagline {
+            font-size: 20px;
+            font-weight: 500;
+            color: #64748b;
+            margin-bottom: 24px;
+        }
+
+        .template-section {
+            margin-bottom: 80px;
+        }
+
+        .template-section h2 {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #f1f5f9;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #334155;
+        }
+
+        .template-section p {
+            color: #94a3b8;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .features-grid,
+        .benefits-grid,
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .feature-item,
+        .benefit-item,
+        .step-item {
+            padding: 20px;
+            border-radius: 8px;
+            background-color: rgba(30, 41, 59, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover,
+        .benefit-item:hover,
+        .step-item:hover {
+            background-color: rgba(30, 41, 59, 0.8);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-item h3,
+        .benefit-item h3,
+        .step-item h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #f1f5f9;
+            margin-bottom: 8px;
+        }
+
+        .feature-item p,
+        .benefit-item p,
+        .step-item p {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 40px;
+            border-radius: 8px;
+            background-color: rgba(30, 41, 59, 0.5);
+            margin: 60px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #f1f5f9;
+            margin-bottom: 20px;
+            text-transform: none;
+            letter-spacing: normal;
+            border-bottom: none;
+        }
+
+        .cta-button {
             display: inline-block;
-            padding: 12px 24px;
-            background: #007bff;
-            color: #fff;
+            padding: 12px 32px;
+            background-color: #22d3ee;
+            color: #0f172a;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
-        .screenshot {
+        .cta-button:hover {
+            background-color: #67e8f9;
+            transform: translateY(-2px);
+        }
+
+        .screenshot-placeholder {
             width: 100%;
-            height: auto;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            height: 300px;
+            background: #334155;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 16px;
+            font-weight: 500;
+            margin: 24px 0;
         }
 
         .pricing-table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 24px;
+            background-color: rgba(30, 41, 59, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         .pricing-table th,
         .pricing-table td {
-            border: 1px solid #ddd;
-            padding: 10px;
+            padding: 16px;
             text-align: center;
+            border-bottom: 1px solid #334155;
+        }
+
+        .pricing-table th {
+            background-color: rgba(30, 41, 59, 0.8);
+            color: #f1f5f9;
+            font-weight: 600;
+        }
+
+        .pricing-table td {
+            color: #94a3b8;
+        }
+
+        .testimonials {
+            margin-top: 32px;
         }
 
         .testimonial {
+            background-color: rgba(30, 41, 59, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            border-left: 4px solid #22d3ee;
+        }
+
+        .testimonial p {
             font-style: italic;
-            margin-bottom: 10px;
+            color: #e2e8f0;
+            margin-bottom: 8px;
+        }
+
+        .testimonial .author {
+            color: #64748b;
+            font-size: 14px;
+            font-weight: 500;
         }
 
         .contact-list {
             list-style: none;
+            margin-top: 24px;
         }
 
         .contact-list li {
-            margin-bottom: 5px;
+            margin-bottom: 12px;
+            color: #94a3b8;
+        }
+
+        .contact-list a {
+            color: #22d3ee;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-list a:hover {
+            color: #67e8f9;
+        }
+
+        .highlight {
+            color: #22d3ee;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 50px 20px;
+            }
+
+            .template-header h1 {
+                font-size: 36px;
+            }
+
+            .features-grid,
+            .benefits-grid,
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
         }
     </style>
 </head>
@@ -107,92 +243,103 @@
 <body>
     <div class="container">
         <!-- Header & Tagline -->
-        <header>
+        <header class="template-header">
             <h1>Crop Extension</h1>
-            <p><strong>Effortless cropping right in your browser.</strong></p>
+            <p class="tagline">Effortless cropping right in your browser.</p>
         </header>
 
         <!-- Problem Statement -->
-        <section id="problem">
+        <section id="problem" class="template-section">
             <h2>Problem</h2>
             <p>Users spend too much time cropping images using multiple tools or software.</p>
         </section>
 
         <!-- Solution Overview -->
-        <section id="solution">
+        <section id="solution" class="template-section">
             <h2>Solution</h2>
             <p>Crop Extension lets you select and crop any part of a webpage or image in just three clicks—no extra
                 software needed.</p>
         </section>
 
         <!-- Key Features -->
-        <section id="features">
+        <section id="features" class="template-section">
             <h2>Key Features</h2>
-            <div class="features">
-                <div class="feature"><strong>Auto-detect area</strong>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>Auto-detect area</h3>
                     <p>Smart edge detection for precise cropping.</p>
                 </div>
-                <div class="feature"><strong>Drag &amp; Drop UI</strong>
+                <div class="feature-item">
+                    <h3>Drag &amp; Drop UI</h3>
                     <p>Intuitive interface for quick selection.</p>
                 </div>
-                <div class="feature"><strong>High-res output</strong>
-                    <p>Maintains image quality up to 4K.</p>
+                <div class="feature-item">
+                    <h3>High-res output</h3>
+                    <p>Maintains image quality up to <span class="highlight">4K resolution</span>.</p>
                 </div>
-                <div class="feature"><strong>Multi-format</strong>
+                <div class="feature-item">
+                    <h3>Multi-format</h3>
                     <p>Export as JPEG, PNG, or WebP.</p>
                 </div>
             </div>
         </section>
 
         <!-- Benefits -->
-        <section id="benefits">
+        <section id="benefits" class="template-section">
             <h2>Benefits</h2>
-            <div class="benefits">
-                <div class="benefit"><strong>Save Time</strong>
-                    <p>50% faster than manual cropping.</p>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>Save Time</h3>
+                    <p><span class="highlight">50% faster</span> than manual cropping.</p>
                 </div>
-                <div class="benefit"><strong>No Extra Tools</strong>
+                <div class="benefit-item">
+                    <h3>No Extra Tools</h3>
                     <p>Everything in your browser.</p>
                 </div>
-                <div class="benefit"><strong>Easy Sharing</strong>
+                <div class="benefit-item">
+                    <h3>Easy Sharing</h3>
                     <p>One-click upload and share link.</p>
                 </div>
-                <div class="benefit"><strong>Custom Shortcuts</strong>
+                <div class="benefit-item">
+                    <h3>Custom Shortcuts</h3>
                     <p>Configure hotkeys for speed.</p>
                 </div>
             </div>
         </section>
 
         <!-- How It Works -->
-        <section id="how-it-works">
+        <section id="how-it-works" class="template-section">
             <h2>How It Works</h2>
-            <div class="how-it-works">
-                <div class="step"><strong>1. Install</strong>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <h3>1. Install</h3>
                     <p>Add extension from store.</p>
                 </div>
-                <div class="step"><strong>2. Select</strong>
+                <div class="step-item">
+                    <h3>2. Select</h3>
                     <p>Click toolbar and drag to crop.</p>
                 </div>
-                <div class="step"><strong>3. Save &amp; Share</strong>
+                <div class="step-item">
+                    <h3>3. Save &amp; Share</h3>
                     <p>Download or upload instantly.</p>
                 </div>
             </div>
         </section>
 
         <!-- Screenshot / GIF Placeholder -->
-        <section id="screenshots">
+        <section id="screenshots" class="template-section">
             <h2>Preview</h2>
-            <img src="screenshot-placeholder.png" alt="Extension Preview" class="screenshot" />
+            <div class="screenshot-placeholder">Extension Preview Screenshot</div>
         </section>
 
         <!-- Compatibility & Requirements -->
-        <section id="compatibility">
+        <section id="compatibility" class="template-section">
             <h2>Compatibility</h2>
-            <p>Works on Chrome, Firefox, Edge. Requires browser version 80+.</p>
+            <p>Works on <span class="highlight">Chrome</span>, <span class="highlight">Firefox</span>, <span class="highlight">Edge</span>. Requires browser version 80+.</p>
         </section>
 
         <!-- Pricing Plans -->
-        <section id="pricing">
+        <section id="pricing" class="template-section">
             <h2>Pricing</h2>
             <table class="pricing-table">
                 <thead>
@@ -210,7 +357,7 @@
                     </tr>
                     <tr>
                         <td>Pro</td>
-                        <td>$4.99/mo</td>
+                        <td><span class="highlight">$4.99/mo</span></td>
                         <td>All features + cloud backup</td>
                     </tr>
                 </tbody>
@@ -218,25 +365,25 @@
         </section>
 
         <!-- Testimonials -->
-        <section id="testimonials">
+        <section id="testimonials" class="template-section">
             <h2>Testimonials</h2>
             <p class="testimonial">“Crop Extension saved our design team hours each week!” — Design Lead</p>
             <p class="testimonial">“Fast, accurate, and effortless.” — UX Manager</p>
         </section>
 
         <!-- Call to Action -->
-        <section class="cta">
+        <section class="cta-section">
             <h2>Get Started</h2>
-            <a href="#">Install Now</a>
+            <a href="#" class="cta-button">Install Now</a>
         </section>
 
         <!-- Contact -->
-        <footer>
+        <footer class="template-section">
             <h2>Contact</h2>
             <ul class="contact-list">
-                <li>Email: support@cropext.com</li>
-                <li>Website: www.cropext.com</li>
-                <li>Twitter: @cropext</li>
+                <li>Email: <a href="mailto:support@cropext.com">support@cropext.com</a></li>
+                <li>Website: <a href="#">www.cropext.com</a></li>
+                <li>Twitter: <a href="#">@cropext</a></li>
             </ul>
         </footer>
     </div>

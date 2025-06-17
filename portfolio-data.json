@@ -5,10 +5,32 @@
       "period": "From 2019.05 - current",
       "company": "PUBG Studios",
       "title": "Translator",
-      "description": "Translate various materials for internal teams such as Marketing, Development, QA, and many others.",
+      "description": "Translate a wide range of internal materials across teams including Development, Marketing, QA, and more — ensuring seamless cross-language communication within the studio.",
       "skills": [
-        "English",
-        "Korean"
+        "Game Development",
+        "Technical Translation"
+      ]
+    },
+    {
+      "id": "ignkorea",
+      "period": "From 2018.09 - 2019.05",
+      "company": "IGN Korea",
+      "title": "Marketer & Translator",
+      "description": "Created localized content and collaborated with IGN HQ in the U.S. for global initiatives, including IGN First campaigns.",
+      "skills": [
+        "Gaming News",
+        "Marketing"
+      ]
+    },
+    {
+      "id": "lamarzoccokorea",
+      "period": "From 2017.09 - 2018.09",
+      "company": "La Marzocco Korea",
+      "title": "Marketer & Translator",
+      "description": "Communicated with HQ in Italy for technical support and translated various materials for the coffee scene in Korea.",
+      "skills": [
+        "Coffee",
+        "Marketing"
       ]
     }
   ],
@@ -55,8 +77,8 @@
       "link": "https://github.com/Hyunsang-coder/RandomRunner.git",
       "image": "images/randomrunner.png",
       "skills": [
-        "flutter",
-        "dart"
+        "C#",
+        "Unity"
       ]
     }
   ]

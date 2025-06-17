@@ -41,8 +41,19 @@
       "id": "wordybuddy",
       "title": "WordiBuddy: Vocab Notebook",
       "description": "Vocabulary notebook for your daily study. Add words, review them, and track your progress.",
-      "link": "",
+      "link": "https://github.com/Hyunsang-coder/vaca_notes.git",
       "image": "images/wordibuddy.png",
+      "skills": [
+        "flutter",
+        "dart"
+      ]
+    },
+    {
+      "id": "randomrunner",
+      "title": "Random Runner",
+      "description": "A quick and funny 3D race game where six random characters dash, stumble, and boost to decide who’s first. Perfect for bets, turn order, or laughs.",
+      "link": "https://github.com/Hyunsang-coder/RandomRunner.git",
+      "image": "images/randomrunner.png",
       "skills": [
         "flutter",
         "dart"

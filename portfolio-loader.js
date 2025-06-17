@@ -55,17 +55,29 @@ class PortfolioLoader {
 
         container.innerHTML = '<p style="color: #94a3b8;">🔍 Loading projects...</p>';
 
-        const projectsHTML = this.data.projects.map(project => `
+        const projectsHTML = this.data.projects.map(project => {
+            const hasLink = project.link && project.link.trim() !== '';
+            const linkAttrs = hasLink ? `href="${project.link}" target="_blank" rel="noopener noreferrer"` : '';
+            
+            return `
             <div class="project-item">
-                <a href="${project.link}" class="project-link project-image-link">
-                    <div class="project-image-placeholder">
+                ${hasLink ? 
+                    `<a ${linkAttrs} class="project-link project-image-link">
+                        <div class="project-image-placeholder">
+                            <img src="${project.image}" alt="${project.title}" class="project-image" />
+                        </div>
+                    </a>` :
+                    `<div class="project-image-placeholder">
                         <img src="${project.image}" alt="${project.title}" class="project-image" />
-                    </div>
-                </a>
+                    </div>`
+                }
                 <div class="project-content">
                     <div class="project-header">
                         <h3 class="project-title">
-                            <a href="${project.link}" class="project-link">${project.title}</a>
+                            ${hasLink ? 
+                                `<a ${linkAttrs} class="project-link">${project.title}</a>` :
+                                project.title
+                            }
                         </h3>
                     </div>
                     <p class="project-description">${project.description}</p>
@@ -74,7 +86,8 @@ class PortfolioLoader {
                     </div>
                 </div>
             </div>
-        `).join('');
+            `;
+        }).join('');
 
         container.innerHTML = projectsHTML;
         console.log(`✅ Loaded ${this.data.projects.length} project items`);

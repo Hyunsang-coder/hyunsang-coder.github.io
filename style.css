@@ -27,7 +27,7 @@ body {
     position: fixed;
     left: 0;
     top: 0;
-    width: 45%;
+    width: 50%;
     height: 100vh;
     padding: 100px 48px 50px 48px;
     display: flex;
@@ -138,14 +138,17 @@ body {
 
 /* 우측 패널 */
 .right-panel {
-    margin-left: 45%;
-    width: 55%;
+    margin-left: 50%;
+    width: 50%;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .main-content {
     padding: 100px 50px 0 50px;
-    max-width: 800px;
+    max-width: 650px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* 섹션 스타일 */
@@ -169,6 +172,10 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: #f1f5f9;
+}
+
+.section-content {
+    overflow: hidden;
 }
 
 .section-content p {
@@ -270,6 +277,10 @@ body {
     border-radius: 8px;
     margin-bottom: 32px;
     transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+    flex-shrink: 1;
 }
 
 .project-item:hover {
@@ -291,12 +302,23 @@ body {
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.05em;
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .project-content {
     flex: 1;
     display: flex;
     flex-direction: column;
+    min-width: 0;
+    overflow-wrap: break-word;
+    flex-shrink: 1;
 }
 
 .project-header {
@@ -324,6 +346,9 @@ body {
     font-size: 14px;
     margin-bottom: 16px;
     line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .project-skills {
@@ -391,7 +416,9 @@ body {
 
     .main-content {
         padding: 50px 20px 0;
-        max-width: none;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .experience-item {
@@ -422,6 +449,16 @@ body {
     .experience-skills,
     .project-skills {
         gap: 6px;
+    }
+
+    .project-item {
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .project-image-placeholder {
+        align-self: center;
     }
 
     .skill-tag {

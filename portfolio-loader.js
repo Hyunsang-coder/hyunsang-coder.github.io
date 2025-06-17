@@ -57,7 +57,11 @@ class PortfolioLoader {
 
         const projectsHTML = this.data.projects.map(project => `
             <div class="project-item">
-                <div class="project-image-placeholder">${project.image || 'Project Image'}</div>
+                <a href="${project.link}" class="project-link project-image-link">
+                    <div class="project-image-placeholder">
+                        <img src="${project.image}" alt="${project.title}" class="project-image" />
+                    </div>
+                </a>
                 <div class="project-content">
                     <div class="project-header">
                         <h3 class="project-title">
@@ -125,7 +129,7 @@ class PortfolioLoader {
 }
 
 // Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const loader = new PortfolioLoader();
     loader.init();
 });

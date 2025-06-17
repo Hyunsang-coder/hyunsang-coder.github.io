@@ -42,7 +42,7 @@
       "title": "WordiBuddy: Vocab Notebook",
       "description": "Vocabulary notebook for your daily study. Add words, review them, and track your progress.",
       "link": "",
-      "image": "images/wordybuddy.png",
+      "image": "images/wordibuddy.png",
       "skills": [
         "flutter",
         "dart"

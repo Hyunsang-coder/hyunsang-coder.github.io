@@ -2,29 +2,51 @@
   "experiences": [
     {
       "id": "pubg-studios",
-      "period": "2019.05 ~",
+      "period": "From 2019.05 - current",
       "company": "PUBG Studios",
       "title": "Translator",
-      "description": "..",
-      "skills": ["English"]
+      "description": "Translate various materials for internal teams such as Marketing, Development, QA, and many others.",
+      "skills": [
+        "English",
+        "Korean"
+      ]
     }
   ],
   "projects": [
     {
       "id": "readkatoo",
-      "title": "ReadKatoo",
-      "description": "Free from distractions.",
-      "link": "#",
-      "image": null,
-      "skills": ["html", "css"]
+      "title": "ReadKatoo: Customizable Read Mode",
+      "description": "Extract clean articles from any web page. Customize the reading experience, remove ads, and easily copy or export content.",
+      "link": "https://chromewebstore.google.com/detail/acmdaoakiobmliocgpndbmifbhlgcppi?utm_source=item-share-cb",
+      "image": "images/readkatoo.png",
+      "skills": [
+        "html",
+        "css",
+        "javascript"
+      ]
     },
     {
-      "id": "random-runner",
-      "title": "Random Runner",
-      "description": "사다리타기",
-      "link": "#",
-      "image": null,
-      "skills": ["C#"]
+      "id": "reckatoo",
+      "title": "RecKatoo: Audio Recorder & Editor",
+      "description": "Easily record audio from your current browser tab, trim unwanted parts, and save your recordings as MP3 files.",
+      "link": "https://chromewebstore.google.com/detail/adflecfgddcaggmhjnmjjonkcehbbdpj?utm_source=item-share-cb",
+      "image": "images/reckatoo.png",
+      "skills": [
+        "html",
+        "css",
+        "javascript"
+      ]
+    },
+    {
+      "id": "wordybuddy",
+      "title": "WordiBuddy: Vocab Notebook",
+      "description": "Vocabulary notebook for your daily study. Add words, review them, and track your progress.",
+      "link": "",
+      "image": "images/wordybuddy.png",
+      "skills": [
+        "flutter",
+        "dart"
+      ]
     }
   ]
 }
